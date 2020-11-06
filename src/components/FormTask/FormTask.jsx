@@ -23,10 +23,12 @@ const Button = styled.button`
     color: #fff;
     border: none;
     font-size: 1em;
-    transition: 1s;
-    margin-top: 1vh;
+    transition: .5s;
+    margin-top: 2vh;
+    font-weight: bold;
     :hover{
         background-color: #A1B6FF;
+        color: #000;
     }
 `;
 
