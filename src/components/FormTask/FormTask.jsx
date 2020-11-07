@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { device } from '../../device';
 
 const Form = styled.form`
     display: flex;
@@ -14,6 +15,13 @@ const Input = styled.input`
     border-bottom: 1px solid #547AFE;
     width: 40vw;
     font-size: 1.5em;
+
+    @media ${device.tablet} {
+        width: 60vw;
+    }
+    @media ${device.mobileL} {
+        width: 70vw;
+    }
 `;
 const Button = styled.button`
     border-radius: 10px;
@@ -29,12 +37,19 @@ const Button = styled.button`
     :hover{
         background-color: #A1B6FF;
         color: #000;
+        cursor: pointer;
+    }
+    @media ${device.tablet} {
+        width: 20vw;
+    }
+    @media ${device.mobileL} {
+        width: 30vw;
     }
 `;
 
 const FormTask = () => (
     <Form>
-        <Input name="taskDo" type="text" placeholder="Escriba una tarea" />
+        <Input autoComplete="off" name="taskDo" type="text" placeholder="Write a task"/>
         <Button>Add Task</Button>
     </Form>
 )

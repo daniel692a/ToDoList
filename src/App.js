@@ -2,6 +2,7 @@ import './App.css';
 import { createGlobalStyle } from 'styled-components';
 import TitleElement from './components/TitleElement/TitleElement';
 import FormTask from './components/FormTask/FormTask';
+import TaskList from './components/TaskList/TaskList';
 
 const GlobalStyles = createGlobalStyle`
   body{
@@ -17,6 +18,7 @@ function App() {
       <GlobalStyles />
       <TitleElement />
       <FormTask />
+      <TaskList />
     </div>
   );
 }
