@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { device } from '../../device';
+import TaskElement from '../TaskElement/TaskElement';
 
 const TaskListE = styled.div`
     width: 35vw;
@@ -31,6 +32,12 @@ const TaskListE = styled.div`
 const TaskList = () => {
     return (
         <TaskListE>
+            <TaskElement/>
+            <TaskElement/>
+            <TaskElement/>
+            <TaskElement/>
+            <TaskElement/>
+            <TaskElement/>
         </TaskListE>
     )
 }
