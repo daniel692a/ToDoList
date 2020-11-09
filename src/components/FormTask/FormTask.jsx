@@ -31,7 +31,7 @@ const Button = styled.button`
     color: #fff;
     border: none;
     font-size: 1em;
-    transition: .5s;
+    transition: 0.2s;
     margin-top: 2vh;
     font-weight: bold;
     :hover{

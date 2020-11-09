@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import { device } from '../../device';
-import TaskElement from '../TaskElement/TaskElement';
+import ExchageRates from '../ExchageRates/ExchageRates';
 
 const TaskListE = styled.div`
     width: 35vw;
     height: 65vh;
-    background-color: #3B4592;
+    background-color: rgba(59,69,146,0.25);
     border-radius: 10px;
     margin: 3vh auto;
     overflow: scroll;
@@ -29,16 +29,12 @@ const TaskListE = styled.div`
         height: 65vh;
     }
 `;
+
 const TaskList = () => {
     return (
-        <TaskListE>
-            <TaskElement/>
-            <TaskElement/>
-            <TaskElement/>
-            <TaskElement/>
-            <TaskElement/>
-            <TaskElement/>
-        </TaskListE>
+    <TaskListE>
+        <ExchageRates />
+    </TaskListE>
     )
 }
 
