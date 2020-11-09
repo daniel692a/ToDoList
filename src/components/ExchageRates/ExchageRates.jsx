@@ -4,7 +4,7 @@ import { useQuery, gql } from '@apollo/client';
 
 const EXCHANGE_RATES = gql`
     query GetTasks {
-        taskstodo(id: Int!) {
+        taskstodo(id: Int) {
             id
             title
             completed
