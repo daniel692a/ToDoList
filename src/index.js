@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
 const client = new ApolloClient({
-  uri: 'https://stoic-mcnulty-502544.netlify.app',
+  uri: 'https://todoapigql.netlify.app/',
   cache: new InMemoryCache()
 })
 
