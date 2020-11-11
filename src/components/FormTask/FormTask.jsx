@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { device } from '../../device';
+import { useMutation, gql } from '@apollo/client';
 
 const Form = styled.form`
     display: flex;
@@ -47,11 +48,40 @@ const Button = styled.button`
     }
 `;
 
-const FormTask = () => (
-    <Form>
-        <Input autoComplete="off" name="taskDo" type="text" placeholder="Write a task"/>
-        <Button>Add Task</Button>
-    </Form>
-)
+const GET_ALL_TASKS = gql`
+    query GetAllTasks {
+        tasks{
+            id
+            title
+        }
+    }
+`;
+
+const ADD_TASK= gql`
+    mutation addTodo($title: String!) {
+        createTask(title: $title, completed: false) {
+            title
+        }
+    }
+`;
+
+function FormTask() {
+    let input;
+    const [addTodo] = useMutation(ADD_TASK, {
+        refetchQueries: mutationResult => [{query: GET_ALL_TASKS}]
+    });
+    return(
+        <Form>
+            <Input autoComplete="off" type="text" placeholder="Write a task" ref={node => { input = node; }}/>
+            <Button onClick={
+                e => {
+                    e.preventDefault();
+                    addTodo({ variables: { title: input.value }});
+                    input.value='';
+                }
+            }>Add Task</Button>
+        </Form>
+    )
+}
 
 export default FormTask;
